@@ -15,7 +15,7 @@ Exit Strategy: The positions are closed when the spread narrows down again, or b
 
 Pairs trading using Kalman_filters
 
-*A. PAIR IDENTIFICATION AND SELECTION*
+_**A. PAIR IDENTIFICATION AND SELECTION**_
 
 A pair is selected based on their good statistical arbitrage opportunities over time. Correlation and cointegration are 2 important terms which we calculated to keep in check if the stocks follow the required relative price movements, i.e. in line with good statistical arbitrage. Correlation: Correlation describes the relation between variables ad is quantified by the correlation coefficient ρ, ranging from -1 to +1. The value of +1 indicates a perfect positive correlation between the two variables, -1 indicates a perfect negative correlation and 0 means there is no correlation. Correlation(X,Y) = ρ = COV(X,Y) / σ(X),σ(Y) Where, COV is covariance σ is standard deviation Cointegration: Cointegration is a statistical property of two or more time-series variables which indicates if a linear combination of the variables is stationary.Parameters such as mean and variance do not change over time. Spread= Y - n*X Where, n is the hedge ratio (It is ideal when spread= 0)
 
