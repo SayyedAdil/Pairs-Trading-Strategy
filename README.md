@@ -21,8 +21,7 @@ A pair is selected based on their good statistical arbitrage opportunities over 
 
 Libraries imported for downloading data for the past years is yfinance. This library provides extensive data regarding the stocks’ opening price, closing price, adjacent close price, low price and high price over the years for different stocks/tickers. ANALYSIS TOOLS FOR PAIR SELECTION: Data from sites NSE( Nifty 50) are taken.Pairs of 2 stocks are checked for their sharpe ratio and CAGR. The pair with highest sharpe ratio and CAGR is selected. Following that, we proceed further in the trading strategy. If the co-integration test meets our threshold statistical significance (in our case 5%), then that pair of tickers will be stored in a list for later retrieval.
 
-*B.TRADING STRATEGY AND SIGNAL GENERATION METHOD*
-
+**B. TRADING STRATEGY AND SIGNAL GENERATION METHOD**
 
 Statistical arbitrage works to see when the trade should be done. The spread of both the stocks is found and then it is seen where a significant deviation from the mean is observed. This will help us to categorize among the correlated assets, one will be the “lead” asset and the other would be the “lag” asset. The lead asset typically outperforms the lag asset. The assumption behind this strategy is that the spread from pairs that show properties of co-integration is mean reverting in nature and therefore will provide arbitrage opportunities if the spread deviates significantly from the mean.
 
@@ -30,7 +29,7 @@ The lead asset would grab a long position(buy the stock, in hope that its price 
 
 Z-score is a measure of how many standard deviations the current spread is from its historical mean. We then defined entry and exit Z-score thresholds for long and short positions. Identified long entry and exit points based on the Z-score criteria,short entry and exit points based on the opposite Z-score criteria.
 
-*C. TRADING SIGNALS GENERATED AND POSITION SIZING*
+**C. TRADING SIGNALS GENERATED AND POSITION SIZING**
 
 Trading logic
 
@@ -45,7 +44,7 @@ Back-test each pair, and calculate the performance statistics, each as max drown
 Build up portfolios with equal market value distribution, each pair has the same market value
 
 
-*D. Backtesting*
+**D. Backtesting**
 
 The back-test engine follows the steps:
 
@@ -59,7 +58,7 @@ When Z-score crosses lower entry Z-score, go LONG; close the position with Z-sco
 The holdings for stock 1 are tracked based on the cumulative positions (signals) and stock prices.The remaining cash after buying and selling stock 1 is tracked. The total value for stock 1, which is the sum of holdings and cash and the daily returns for stock 1 is calculated. PnL Calculation for Stock 2: Similar to stock 1, all the same factors are also tracked and calculated for stock 2 as well. The total PnL is calculated by adding the PnL of stock 1 and stock 2, which is already stored. DataFrame is cleaned by removing the NaN values and then returned back.
 
 
-*E. PERFORMANCE METRICS*
+**E. PERFORMANCE METRICS**
 
 Sharpe Ratio: It help to assess the risk-adjusted return of an investment or portfolio.It is often used to compare different investments or portfolios and assess which one provides the best risk-adjusted return. Sharpe Ratio (SR) = (Rp - Rf) / σp Where, Rp: The average return of the investment or portfolio. Rf: The risk-free rate of return. σp: The standard deviation of the investment's or portfolio's returns. A higher sharpe ratio is generally preferred, as it indicates a better risk-adjusted return.
 
